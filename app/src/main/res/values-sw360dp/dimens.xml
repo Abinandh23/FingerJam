@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dimensions for medium screens (5-6 inch phones) -->
+    <dimen name="text_size_large">32sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
+    <dimen name="button_height">70dp</dimen>
+    <dimen name="button_width">140dp</dimen>
+    <dimen name="margin_top_large">70dp</dimen>
+    <dimen name="margin_top_medium">160dp</dimen>
+    <dimen name="margin_side">24dp</dimen>
+    <dimen name="padding_standard">16sp</dimen>
+    <dimen name="dual_layout_height">280dp</dimen>
+    <dimen name="center_line_height">8dp</dimen>
+    <dimen name="game_text_size_large">52dp</dimen>
+    <dimen name="game_text_size_medium">36dp</dimen>
+    <dimen name="game_text_size_small">26dp</dimen>
+    
+    <!-- Responsive spacing -->
+    <dimen name="spacing_small">6dp</dimen>
+    <dimen name="spacing_medium">12dp</dimen>
+    <dimen name="spacing_large">18dp</dimen>
+    <dimen name="spacing_xlarge">24dp</dimen>
+    
+    <!-- Responsive text sizes -->
+    <dimen name="title_size">32sp</dimen>
+    <dimen name="subtitle_size">22sp</dimen>
+    <dimen name="body_size">16sp</dimen>
+    <dimen name="caption_size">14sp</dimen>
+    
+    <!-- Responsive button sizes -->
+    <dimen name="button_min_height">48dp</dimen>
+    <dimen name="button_min_width">120dp</dimen>
+    <dimen name="button_padding">14dp</dimen>
+    
+    <!-- Responsive margins -->
+    <dimen name="margin_small">6dp</dimen>
+    <dimen name="margin_medium">12dp</dimen>
+    <dimen name="margin_large">18dp</dimen>
+    <dimen name="margin_xlarge">24dp</dimen>
+</resources> 

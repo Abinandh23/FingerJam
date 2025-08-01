@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DualPlayGameScreenActivity"
+    android:background="@drawable/gradient_background">
+
+    <!-- Player 1 Area (Left) -->
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/player1_gradient"
+        android:elevation="8dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PLAYER 1"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:shadowColor="@color/neon_pink"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:alpha="0.9" />
+
+    </LinearLayout>
+
+    <!-- Center Line -->
+    <TextView
+        android:id="@+id/blackLine"
+        android:layout_width="@dimen/center_line_height"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@+id/topLayout"
+        android:background="@color/text_neon"
+        android:elevation="10dp"
+        android:shadowColor="@color/neon_pink"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="8" />
+
+    <!-- Player 2 Area (Right) -->
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@+id/blackLine"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/player2_gradient"
+        android:elevation="8dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PLAYER 2"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:shadowColor="@color/neon_blue"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:alpha="0.9" />
+
+    </LinearLayout>
+
+</RelativeLayout> 

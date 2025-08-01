@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "547259587831",
+    "firebase_url": "https://fingerjam-cf47e.firebaseio.com",
+    "project_id": "fingerjam-cf47e",
+    "storage_bucket": "fingerjam-cf47e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547259587831:android:10a77ea5583ab87a8f07f2",
+        "android_client_info": {
+          "package_name": "com.example.fingerjam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547259587831-srhe26k62cl0r4ufpt5pkdh2qe66uhio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fingerjam",
+            "certificate_hash": "619a33c96f714b9fc23ffe8c5f351cfa7dc74547"
+          }
+        },
+        {
+          "client_id": "547259587831-tp35644b3su0p6e705n3fhlvc9d5guqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVtPeFYLOI7JmpjVRUoIbOYc0PH630kIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547259587831-tp35644b3su0p6e705n3fhlvc9d5guqs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

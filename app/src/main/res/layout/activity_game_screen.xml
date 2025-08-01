@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameScreenActivity"
+    android:background="@drawable/gradient_background">
+
+    <LinearLayout
+        android:id="@+id/touchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/margin_side">
+
+        <!-- Header with Counter and Timer -->
+        <LinearLayout
+            android:id="@+id/countAndTimerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_standard"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:background="@drawable/glow_border"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium">
+
+            <!-- Touch Counter -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOUCHES"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/caption_size"
+                    android:textStyle="bold"
+                    android:alpha="0.7" />
+
+                <TextView
+                    android:id="@+id/showCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:textColor="@color/text_accent"
+                    android:hint="0"
+                    android:textColorHint="@color/text_accent"
+                    android:alpha="1.0"
+                    android:textSize="@dimen/game_text_size_medium"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:shadowColor="@color/neon_green"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4" />
+
+            </LinearLayout>
+
+            <!-- Timer -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TIME"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/caption_size"
+                    android:textStyle="bold"
+                    android:alpha="0.7" />
+
+                <TextView
+                    android:id="@+id/showTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:textColor="@color/text_neon"
+                    android:alpha="1.0"
+                    android:textSize="@dimen/game_text_size_small"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:shadowColor="@color/neon_blue"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Game Area -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_xlarge">
+
+            <!-- Start Text -->
+            <TextView
+                android:id="@+id/startText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎯 TAP TO START!"
+                android:textSize="@dimen/game_text_size_large"
+                android:textColor="@color/text_neon"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:shadowColor="@color/neon_pink"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="6"
+                android:elevation="10dp" />
+
+            <!-- Game Instructions -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="Tap as fast as you can!"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/body_size"
+                android:textAlignment="center"
+                android:alpha="0.8" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Modern Gaming Color Palette -->
+    <color name="colorPrimary">#6C41AA</color>
+    <color name="colorPrimaryDark">#4A2B7A</color>
+    <color name="colorAccent">#FF6B35</color>
+    
+    <!-- Background Colors -->
+    <color name="background_dark">#0F0F23</color>
+    <color name="background_medium">#1A1A2E</color>
+    <color name="background_light">#16213E</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B8B8B8</color>
+    <color name="text_accent">#FFD700</color>
+    <color name="text_neon">#00FFFF</color>
+    
+    <!-- Game Colors -->
+    <color name="player1_color">#FF6B35</color>
+    <color name="player2_color">#4ECDC4</color>
+    <color name="neon_pink">#FF1493</color>
+    <color name="neon_blue">#00BFFF</color>
+    <color name="neon_green">#00FF7F</color>
+    <color name="neon_purple">#9370DB</color>
+    
+    <!-- Gradient Colors -->
+    <color name="gradient_start">#667eea</color>
+    <color name="gradient_end">#764ba2</color>
+    <color name="gradient_start_dark">#2C3E50</color>
+    <color name="gradient_end_dark">#34495E</color>
+    
+    <!-- Button Colors -->
+    <color name="button_primary">#FF6B35</color>
+    <color name="button_secondary">#4ECDC4</color>
+    <color name="button_dark">#2C3E50</color>
+    
+    <!-- Success/Error Colors -->
+    <color name="success_green">#00FF7F</color>
+    <color name="error_red">#FF4757</color>
+    <color name="warning_orange">#FFA500</color>
+</resources>
