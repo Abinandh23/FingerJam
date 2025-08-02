@@ -13,21 +13,18 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".CreateRoomActivity" />
         <activity android:name=".CreateOrJoinRoomActivity" />
-        <activity 
-            android:name=".DualPlayGameScreenActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity android:name=".PracticeMenuActivity" />
-        <activity android:name=".LandingActivity" />
         <activity 
-            android:name=".GameScreenActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
-        <activity android:name=".MainActivity">
+            android:name=".LandingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity 
+            android:name=".GameScreenActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".MainActivity" />
     </application>
     <uses-permission android:name="android.permission.VIBRATE" />
 

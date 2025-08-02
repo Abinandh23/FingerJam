@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Context;
 
 public class PracticeMenuActivity extends AppCompatActivity {
 
@@ -25,6 +28,7 @@ public class PracticeMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_practice_menu);
 
         initializeFields();
+        setupInputHandling();
 
         //emptyTouchesField();
 
@@ -43,6 +47,58 @@ public class PracticeMenuActivity extends AppCompatActivity {
         touchesButton = (Button) findViewById(R.id.touchesStartButton);
         secondsText = (EditText) findViewById(R.id.secondsText);
         secondsButton = (Button) findViewById(R.id.secondsStartButton);
+    }
+
+    private void setupInputHandling() {
+        // Handle Enter key press for touches input
+        touchesText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, android.view.KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_NEXT) {
+                    // Hide the keyboard and clear focus
+                    android.view.inputmethod.InputMethodManager imm = (android.view.inputmethod.InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(touchesText.getWindowToken(), 0);
+                    touchesText.clearFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        // Handle Enter key press for seconds input
+        secondsText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, android.view.KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_NEXT) {
+                    // Hide the keyboard and clear focus
+                    android.view.inputmethod.InputMethodManager imm = (android.view.inputmethod.InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(secondsText.getWindowToken(), 0);
+                    secondsText.clearFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        // Clear seconds field when touches field is focused
+        touchesText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    secondsText.setText("");
+                }
+            }
+        });
+
+        // Clear touches field when seconds field is focused
+        secondsText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    touchesText.setText("");
+                }
+            }
+        });
     }
 
     private void emptySecondsField() {
@@ -123,5 +179,13 @@ public class PracticeMenuActivity extends AppCompatActivity {
                 touchesText.setText("");
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Navigate back to landing screen when back button is pressed
+        Intent intent = new Intent(PracticeMenuActivity.this, LandingActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

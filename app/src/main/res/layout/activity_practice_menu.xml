@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:text="🎮 Touch Challenge"
                     android:textColor="@color/text_accent"
-                    android:textSize="@dimen/text_size_medium"
+                    android:textSize="26sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="@dimen/spacing_medium"
                     android:shadowColor="@color/neon_green"
@@ -72,9 +72,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="🚀 Start Touch Challenge"
-                    android:textSize="@dimen/text_size_medium"
+                    android:textSize="15sp"
                     android:padding="@dimen/button_padding"
-                    android:minHeight="@dimen/button_min_height" />
+                    android:minHeight="@dimen/button_min_height"
+                    android:singleLine="true"
+                    android:ellipsize="end" />
 
             </LinearLayout>
 
@@ -92,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:text="⏱️ Time Challenge"
                     android:textColor="@color/text_neon"
-                    android:textSize="@dimen/text_size_medium"
+                    android:textSize="26sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="@dimen/spacing_medium"
                     android:shadowColor="@color/neon_blue"
@@ -121,9 +123,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="⚡ Start Time Challenge"
-                    android:textSize="@dimen/text_size_medium"
+                    android:textSize="15sp"
                     android:padding="@dimen/button_padding"
-                    android:minHeight="@dimen/button_min_height" />
+                    android:minHeight="@dimen/button_min_height"
+                    android:singleLine="true"
+                    android:ellipsize="end" />
 
             </LinearLayout>
 

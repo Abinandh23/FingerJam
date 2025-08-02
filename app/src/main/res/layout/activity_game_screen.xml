@@ -85,12 +85,12 @@
 
                 <TextView
                     android:id="@+id/showTimer"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_small"
                     android:textColor="@color/text_neon"
                     android:alpha="1.0"
-                    android:textSize="@dimen/game_text_size_small"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     android:gravity="center"
                     android:shadowColor="@color/neon_blue"
@@ -130,6 +130,7 @@
 
             <!-- Game Instructions -->
             <TextView
+                android:id="@+id/instructionText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_large"
@@ -138,6 +139,19 @@
                 android:textSize="@dimen/body_size"
                 android:textAlignment="center"
                 android:alpha="0.8" />
+
+            <!-- Replay Button (initially hidden) -->
+            <Button
+                android:id="@+id/replayButton"
+                style="@style/ModernButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="🔄 REPLAY"
+                android:textSize="@dimen/text_size_medium"
+                android:padding="@dimen/button_padding"
+                android:minHeight="@dimen/button_min_height"
+                android:visibility="gone" />
 
         </LinearLayout>
 

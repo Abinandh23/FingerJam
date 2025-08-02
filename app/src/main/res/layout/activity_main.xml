@@ -5,23 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-
     android:background="#221B23">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:padding="20sp"
-        android:layout_margin="50dp"
-        android:text="FingerJam"
-        android:textColor="#6C41AA"
-        android:textSize="45dp"
-        android:textAlignment="center"
-        android:textStyle="italic">
+    <!-- Removed FingerJam header -->
 
-    </TextView>
-
-
-
-    </RelativeLayout>
+</RelativeLayout>
