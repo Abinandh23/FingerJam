@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_side"
+    android:background="@drawable/gradient_background"
+    tools:context=".MultiplayerGameActivity">
+
+    <!-- Game Info Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/glow_border"
+        android:padding="@dimen/padding_standard"
+        android:layout_marginBottom="@dimen/spacing_large">
+
+        <TextView
+            android:id="@+id/gameInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game Info"
+            android:textColor="@color/text_accent"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/spacing_medium" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Waiting for game to start..."
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Game Stats -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/spacing_large">
+
+        <TextView
+            android:id="@+id/touchCountText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Touches: 0"
+            android:textColor="@color/text_neon"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/glow_border"
+            android:padding="@dimen/padding_standard"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Time: 00:00.0"
+            android:textColor="@color/text_neon"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/glow_border"
+            android:padding="@dimen/padding_standard"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
+
+    <!-- Game Area -->
+    <LinearLayout
+        android:id="@+id/gameArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/glow_border"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="@dimen/spacing_large">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎯 TAP HERE TO PLAY! 🎯"
+            android:textColor="@color/text_neon"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:shadowColor="@color/neon_pink"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First to reach the target wins!"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/spacing_medium" />
+
+    </LinearLayout>
+
+    <!-- Leave Game Button -->
+    <Button
+        android:id="@+id/leaveGameButton"
+        style="@style/ModernButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🚪 Leave Game"
+        android:textSize="16sp"
+        android:padding="@dimen/button_padding"
+        android:minHeight="@dimen/button_min_height"
+        android:background="@drawable/glow_border" />
+
+</LinearLayout> 

@@ -8,6 +8,7 @@
     android:fillViewport="true">
 
     <LinearLayout
+        android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -20,6 +21,33 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="@dimen/margin_top_large" />
+
+        <!-- Theme Button -->
+        <Button
+            android:id="@+id/themeButton"
+            style="@style/ModernButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎨 Default"
+            android:textSize="14sp"
+            android:padding="@dimen/button_padding"
+            android:minHeight="@dimen/button_min_height"
+            android:layout_gravity="end"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:background="@drawable/glow_border" />
+
+        <!-- Multiplayer Button -->
+        <Button
+            android:id="@+id/multiplayerButton"
+            style="@style/ModernButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎮 Multiplayer Mode"
+            android:textSize="18sp"
+            android:padding="@dimen/button_padding"
+            android:minHeight="@dimen/button_min_height"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:background="@drawable/glow_border" />
 
         <!-- Main Content -->
         <LinearLayout
@@ -39,6 +67,7 @@
                 android:gravity="center">
 
                 <TextView
+                    android:id="@+id/titleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="🎮 Touch Challenge"

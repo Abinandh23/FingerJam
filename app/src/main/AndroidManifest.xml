@@ -14,6 +14,9 @@
         <activity android:name=".CreateRoomActivity" />
         <activity android:name=".CreateOrJoinRoomActivity" />
         <activity android:name=".PracticeMenuActivity" />
+        <activity android:name=".MultiplayerMenuActivity" />
+        <activity android:name=".MultiplayerLobbyActivity" />
+        <activity android:name=".MultiplayerGameActivity" />
         <activity 
             android:name=".LandingActivity">
             <intent-filter>

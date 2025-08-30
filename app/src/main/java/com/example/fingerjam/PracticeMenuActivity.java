@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
+import android.app.AlertDialog;
 
 public class PracticeMenuActivity extends AppCompatActivity {
 
@@ -20,33 +23,99 @@ public class PracticeMenuActivity extends AppCompatActivity {
     private Button touchesButton;
     private EditText secondsText;
     private Button secondsButton;
-
+    private Button themeButton;
+    private LinearLayout mainLayout;
+    private TextView titleText;
+    private ThemeManager themeManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice_menu);
 
+        themeManager = ThemeManager.getInstance(this);
         initializeFields();
         setupInputHandling();
-
-        //emptyTouchesField();
-
-        //emptySecondsField();
-
-
+        applyCurrentTheme();
 
         startTouchesGame();
-
         startSecondsGame();
+        setupThemeButton();
     }
-
 
     private void initializeFields() {
         touchesText = (EditText) findViewById(R.id.touchesText);
         touchesButton = (Button) findViewById(R.id.touchesStartButton);
         secondsText = (EditText) findViewById(R.id.secondsText);
         secondsButton = (Button) findViewById(R.id.secondsStartButton);
+        themeButton = (Button) findViewById(R.id.themeButton);
+        mainLayout = findViewById(R.id.mainLayout);
+        titleText = (TextView) findViewById(R.id.titleText);
+        
+        // Add multiplayer button
+        Button multiplayerButton = findViewById(R.id.multiplayerButton);
+        if (multiplayerButton != null) {
+            multiplayerButton.setOnClickListener(v -> {
+                Intent intent = new Intent(PracticeMenuActivity.this, MultiplayerMenuActivity.class);
+                startActivity(intent);
+            });
+        }
+
+        // Set input filters for touchesText
+        InputFilter[] filters = new InputFilter[1];
+        filters[0] = new InputFilter.LengthFilter(7); // Allow up to 7 digits
+        touchesText.setFilters(filters);
+
+        // Set input filters for secondsText
+        InputFilter[] secondsFilters = new InputFilter[1];
+        secondsFilters[0] = new InputFilter.LengthFilter(6); // Allow up to 6 digits
+        secondsText.setFilters(secondsFilters);
+    }
+
+    private void setupThemeButton() {
+        themeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showThemePickerDialog();
+            }
+        });
+    }
+
+    private void showThemePickerDialog() {
+        String[] themes = {"Default", "Dark", "Neon", "Minimalist"};
+        int currentTheme = themeManager.getCurrentTheme();
+        
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Choose Theme")
+               .setSingleChoiceItems(themes, currentTheme, (dialog, which) -> {
+                   themeManager.setTheme(which);
+                   applyCurrentTheme();
+                   dialog.dismiss();
+                   Toast.makeText(PracticeMenuActivity.this, 
+                       "Theme changed to " + themes[which], Toast.LENGTH_SHORT).show();
+               })
+               .setNegativeButton("Cancel", null)
+               .show();
+    }
+
+    private void applyCurrentTheme() {
+        // Apply background
+        mainLayout.setBackgroundResource(themeManager.getBackgroundDrawable());
+        
+        // Apply theme to all UI elements
+        themeManager.applyThemeToView(touchesText);
+        themeManager.applyThemeToView(secondsText);
+        themeManager.applyThemeToView(touchesButton);
+        themeManager.applyThemeToView(secondsButton);
+        themeManager.applyThemeToView(themeButton);
+        
+        // Apply text colors
+        themeManager.applyThemeToTextView(touchesText, true);
+        themeManager.applyThemeToTextView(secondsText, true);
+        themeManager.applyThemeToTextView(titleText, true);
+        
+        // Update theme button text
+        themeButton.setText("🎨 " + themeManager.getThemeName());
     }
 
     private void setupInputHandling() {
@@ -150,6 +219,11 @@ public class PracticeMenuActivity extends AppCompatActivity {
                     Toast.makeText(PracticeMenuActivity.this, "Please enter the No. of touches to start", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    int touches = Integer.parseInt(touchesText.getText().toString());
+                    if (touches > 1000000) {
+                        Toast.makeText(PracticeMenuActivity.this, "Maximum touches allowed is 1,000,000", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     Intent touchesIntent = new Intent(PracticeMenuActivity.this, GameScreenActivity.class);
                     touchesIntent.putExtra("noOfTouches", touchesText.getText().toString());
                     touchesIntent.putExtra("isNoOfTouchesBased", true);
@@ -170,6 +244,11 @@ public class PracticeMenuActivity extends AppCompatActivity {
                     Toast.makeText(PracticeMenuActivity.this, "Please enter the No. of seconds to start", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    int seconds = Integer.parseInt(secondsText.getText().toString());
+                    if (seconds > 100000) {
+                        Toast.makeText(PracticeMenuActivity.this, "Maximum seconds allowed is 100,000", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     Intent secondsIntent = new Intent(PracticeMenuActivity.this, GameScreenActivity.class);
                     secondsIntent.putExtra("noOfSeconds", secondsText.getText());
                     secondsIntent.putExtra("isNoOfTouchesBased", false);

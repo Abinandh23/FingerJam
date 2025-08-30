@@ -33,6 +33,7 @@ public class GameScreenActivity extends AppCompatActivity {
     private boolean isRunning = false;
     private boolean gameEnded = false;
     private boolean timeChallengeEnded = false;
+    private ThemeManager themeManager;
 
     private long startTime = 0L;
     long timeInMillies = 0L;
@@ -59,9 +60,11 @@ public class GameScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_screen);
 
+        themeManager = ThemeManager.getInstance(this);
         initializeFields();
         setIntentExtras();
         setupReplayButton();
+        applyCurrentTheme();
         
         if(isTimerBased) {
              timerString = ""+String.format("%02dm %02ds",
@@ -82,6 +85,18 @@ public class GameScreenActivity extends AppCompatActivity {
             checkAndShowTouchCount();
         }
 
+    }
+
+    private void applyCurrentTheme() {
+        // Apply theme to game elements
+        themeManager.applyThemeToView(touchLayout);
+        themeManager.applyThemeToView(replayButton);
+        
+        // Apply text colors
+        themeManager.applyThemeToTextView(touchCount, true);
+        themeManager.applyThemeToTextView(showTimer, true);
+        themeManager.applyThemeToTextView(startText, true);
+        themeManager.applyThemeToTextView(instructionText, false);
     }
 
     private void setIntentExtras() {
@@ -266,7 +281,13 @@ public class GameScreenActivity extends AppCompatActivity {
     }
 
     private void showReplayButton() {
-        replayButton.setVisibility(View.VISIBLE);
+        // Add a 5-second delay before showing the replay button
+        customHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                replayButton.setVisibility(View.VISIBLE);
+            }
+        }, 5000); // 5000 milliseconds = 5 seconds
     }
 
     @Override

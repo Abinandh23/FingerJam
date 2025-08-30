@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_side"
+    android:background="@drawable/gradient_background"
+    tools:context=".MultiplayerLobbyActivity">
+
+    <!-- Room Info -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/glow_border"
+        android:padding="@dimen/padding_standard"
+        android:layout_marginBottom="@dimen/spacing_large">
+
+        <TextView
+            android:id="@+id/roomNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Room Name"
+            android:textColor="@color/text_neon"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/spacing_medium" />
+
+        <TextView
+            android:id="@+id/gameInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game Info"
+            android:textColor="@color/text_accent"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/spacing_medium" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: Waiting"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Countdown Text -->
+    <TextView
+        android:id="@+id/countdownText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game starting in 3..."
+        android:textColor="@color/neon_pink"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:visibility="gone" />
+
+    <!-- Players List -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/glow_border"
+        android:padding="@dimen/padding_standard"
+        android:layout_marginBottom="@dimen/spacing_large">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="👥 Players"
+            android:textColor="@color/text_accent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/spacing_medium" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/playersRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/spacing_medium">
+
+        <Button
+            android:id="@+id/readyButton"
+            style="@style/ModernButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ready"
+            android:textSize="16sp"
+            android:padding="@dimen/button_padding"
+            android:minHeight="@dimen/button_min_height"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/glow_border" />
+
+        <Button
+            android:id="@+id/startGameButton"
+            style="@style/ModernButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Start Game"
+            android:textSize="16sp"
+            android:padding="@dimen/button_padding"
+            android:minHeight="@dimen/button_min_height"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/glow_border" />
+
+    </LinearLayout>
+
+    <!-- Leave Button -->
+    <Button
+        android:id="@+id/leaveRoomButton"
+        style="@style/ModernButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🚪 Leave Room"
+        android:textSize="16sp"
+        android:padding="@dimen/button_padding"
+        android:minHeight="@dimen/button_min_height"
+        android:background="@drawable/glow_border" />
+
+</LinearLayout> 
